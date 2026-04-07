@@ -1,0 +1,11 @@
+
+
+const TEXT = "TEXT";
+const OPTIONS_RADIO = "OPTIONS_RADIO";
+const OPTIONS_MULTI = "OPTIONS_MULTI";
+
+export {
+    TEXT,
+    OPTIONS_RADIO,
+    OPTIONS_MULTI
+}
