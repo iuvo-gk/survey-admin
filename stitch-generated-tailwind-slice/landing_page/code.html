@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InsightFlow | The Conversational Canvas</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#006a61",
+                    "secondary-container": "#86f2e4",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#ffd0d2",
+                    "inverse-primary": "#c3c0ff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "primary-container": "#4f46e5",
+                    "secondary-fixed": "#89f5e7",
+                    "surface-container-high": "#eae6f4",
+                    "inverse-surface": "#302f39",
+                    "surface-variant": "#e4e1ee",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary-fixed-dim": "#ffb2b7",
+                    "on-error": "#ffffff",
+                    "primary": "#3525cd",
+                    "surface-container-low": "#f5f2ff",
+                    "tertiary-fixed": "#ffdadb",
+                    "surface-tint": "#4d44e3",
+                    "surface-container-highest": "#e4e1ee",
+                    "tertiary": "#95002b",
+                    "on-background": "#1b1b24",
+                    "on-tertiary-fixed-variant": "#92002a",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fcf8ff",
+                    "outline": "#777587",
+                    "on-surface": "#1b1b24",
+                    "on-secondary-fixed-variant": "#005049",
+                    "on-primary-container": "#dad7ff",
+                    "surface-container": "#f0ecf9",
+                    "inverse-on-surface": "#f3effc",
+                    "on-secondary-container": "#006f66",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "on-secondary-fixed": "#00201d",
+                    "on-tertiary-fixed": "#40000d",
+                    "on-surface-variant": "#464555",
+                    "surface-dim": "#dcd8e5",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#bf0f3c",
+                    "background": "#fcf8ff",
+                    "primary-fixed": "#e2dfff",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#0f0069"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .display-lg {
+            font-family: 'Plus Jakarta Sans';
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+        .headline-md {
+            font-family: 'Plus Jakarta Sans';
+            font-size: 1.75rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        .label-md {
+            font-family: 'Inter';
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl flex justify-between items-center px-8 h-20 max-w-full mx-auto shadow-xl shadow-slate-900/5">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tight text-indigo-700">InsightFlow</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-indigo-600 font-semibold border-b-2 border-indigo-600 label-md" href="#">Platform</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors label-md" href="#">Templates</a>
+<a class="text-slate-600 font-medium hover:text-indigo-500 transition-colors label-md" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hidden lg:flex items-center gap-2 p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-DEFAULT font-semibold text-sm hover:translate-y-[-1px] active:scale-95 transition-all duration-200">
+                Create Survey
+            </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close up headshot of a smiling professional woman with bright studio lighting and a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgj59Uh-BHArXHuMXX9ErtL4Wy5_aSDBE9DJ6ZP3ujaJjZ4ALvCwDuPP7eZanx1gkLNiGT-OhTuBv3VLpQh4yrii9_GmpXqEcyMyM3j8JrQOoVOm7cwocBJZ4bxUNBp_Od1xAORv4GQnYsBEDJ-8Jztt1o5T1rA6QfmwEACvAQdbKCeceQfhn8-aRko7QWB0kAD38vkNZ_Yyeeasb8VO-dk0Ss0D2gQI_VnGzIjT4w154yXSQNFowtplgCunGxpr1ufZ48ij8iRNYz"/>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 overflow-hidden bg-surface-container-low">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block py-1 px-4 rounded-full bg-primary-fixed text-on-primary-fixed-variant label-md mb-6 uppercase tracking-wider">The Future of Feedback</span>
+<h1 class="display-lg text-on-background mb-8">Data collection that feels like <span class="text-primary italic">conversation</span>.</h1>
+<p class="text-lg text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                        InsightFlow transforms rigid surveys into high-end, editorial experiences that respect your audience's time and your brand's voice.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-DEFAULT font-bold text-lg hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all">
+                            Get Started
+                        </button>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-DEFAULT font-bold text-lg hover:bg-white active:scale-95 transition-all">
+                            View Templates
+                        </button>
+</div>
+</div>
+<div class="relative">
+<!-- Glassmorphism Hero Card -->
+<div class="relative z-10 p-8 rounded-lg bg-white/40 backdrop-blur-2xl shadow-2xl border border-white/20 aspect-[4/3] flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<p class="label-md text-primary font-bold">LIVE SURVEY</p>
+<h3 class="headline-md">Product Satisfaction 2024</h3>
+</div>
+<div class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-xs font-bold">84% Response Rate</div>
+</div>
+<div class="space-y-6">
+<div class="p-6 bg-surface-container-lowest rounded-DEFAULT shadow-sm">
+<p class="text-on-surface font-semibold mb-4">How would you describe your experience?</p>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-4 rounded-lg bg-primary-fixed text-primary font-bold border-2 border-primary/20">Delightful</div>
+<div class="p-4 rounded-lg bg-surface-container text-on-surface-variant">Effortless</div>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full">
+<div class="h-full w-2/3 bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Decorative shapes -->
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary-container/30 blur-3xl rounded-full"></div>
+<div class="absolute -bottom-12 -left-12 w-80 h-80 bg-primary-container/20 blur-3xl rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Survey Builder Section -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="headline-md text-on-background mb-4">The Editorial Builder</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Design beautiful interfaces without a single line of code. Our builder focuses on rhythm, flow, and visual impact.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-lg group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-DEFAULT bg-primary flex items-center justify-center text-on-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h4 class="title-md font-bold mb-3">Smart Logic</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Create dynamic paths based on user responses. Conditional logic that feels human, not robotic.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-xl shadow-slate-900/5 relative lg:scale-110 z-10 border border-primary/10">
+<div class="w-12 h-12 rounded-DEFAULT bg-secondary flex items-center justify-center text-on-secondary mb-6">
+<span class="material-symbols-outlined" data-icon="brush">brush</span>
+</div>
+<h4 class="title-md font-bold mb-3">Signature Styling</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Full control over typography, spacing, and glass effects. Make every survey a brand masterpiece.</p>
+<div class="mt-8 rounded-lg overflow-hidden h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="abstract digital artistic representation of vibrant glowing lines and textures representing high-tech design aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClFa7bLa2bMosv-M5AnuV1taN28gsVUy-caRX7Ei47mD1Wlpb2oXAdfD2OxarvCNqEaKZ9YnKqd7oiCCOkEiCPkj67RTEJA834yNbRysQTA5R9MO8xxcD7l1yVV3OXgeqyCfh8EJ4xX5Y01AxJ5veGT1fqqG4eZl5th0Wrbg3-BBDo-prhDybMZZkrEprx0EQ-f_yqNBbJu5KeDCcoRuxjtgBGe6xwpNOazrqXkD9x8tNbZdCUjJUWrmQJJNHCkwMgKxMXsZ_Y9OyX"/>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-lg group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-DEFAULT bg-tertiary flex items-center justify-center text-on-tertiary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="mobile_friendly">mobile_friendly</span>
+</div>
+<h4 class="title-md font-bold mb-3">Mobile Perfect</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Every survey is automatically optimized for touch devices. Experience seamless flows on any screen.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Analytics Dashboard Section -->
+<section class="py-32 px-8 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+<div class="w-full lg:w-1/2 order-2 lg:order-1">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<span class="label-md text-on-surface-variant block mb-2">Total Responses</span>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-on-background">42.8k</span>
+<span class="text-secondary text-xs font-bold mb-1">+12%</span>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-lg shadow-lg text-on-primary">
+<span class="label-md opacity-80 block mb-2">Completion Rate</span>
+<div class="text-3xl font-bold">92.4%</div>
+<div class="mt-4 h-1.5 w-full bg-white/20 rounded-full">
+<div class="h-full w-[92%] bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="pt-8 space-y-4">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<span class="label-md font-bold text-on-surface-variant">Sentiment</span>
+<span class="material-symbols-outlined text-secondary" data-icon="mood">mood</span>
+</div>
+<div class="flex gap-1 items-end h-24">
+<div class="w-full bg-secondary-container h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-container h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-secondary h-[90%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-container h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-secondary-container h-[75%] rounded-t-sm"></div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-6 rounded-lg">
+<p class="text-xs font-bold text-on-surface-variant uppercase">Key Insight</p>
+<p class="text-sm italic mt-2 text-on-surface">"Users find the checkout flow 40% faster than last month."</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 order-1 lg:order-2">
+<span class="label-md text-secondary font-bold mb-4 block uppercase tracking-widest">Real-time Intelligence</span>
+<h2 class="headline-md text-on-background mb-6 leading-tight">Analytics that speak your language.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Stop drowning in spreadsheets. InsightFlow translates raw data into narrative insights, helping you understand the 'why' behind every response instantly.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>AI-powered sentiment analysis</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Automated trend identification</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>One-click executive summaries</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="headline-md text-on-background">Loved by world-class teams</h2>
+<p class="text-on-surface-variant mt-2">From startups to enterprises, clarity starts here.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-low p-8 rounded-lg flex flex-col h-full">
+<div class="flex gap-1 mb-6 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface text-lg leading-relaxed mb-8 italic">"InsightFlow completely changed how we collect user feedback. The completion rates are double what we saw with Typeform."</p>
+<div class="mt-auto flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="professional portrait of a male CEO in a modern minimalist office with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvXw3yb9PhDET-uoh-TgD9heNR4cmbENr6n-dZDbqgpn_jFPeFpi6jor8Yk2yS2LLB_yAcMx-5upGz1VadEFEtXVWLU7EYG0sEWB7qJ-wq_UTE3dQAQhN8_-6SWQm6yyEe0eaHUTXQt3RL6vnaJxX79IN5_5NZ4eFU9HkZCVGC2TR8nw1duMJvXUU9X7B6o5H8UI72ijG91X6VMYfL81CZESyXHEi1GUCYv73T9e8NGLbbhgIpHlHiie2FKFf13yBhdwXPXPqGq33Q"/>
+<div>
+<p class="font-bold text-on-surface">Marcus Chen</p>
+<p class="label-md text-on-surface-variant">Design Lead, Verve</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-lg flex flex-col h-full border border-surface-container-high">
+<div class="flex gap-1 mb-6 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface text-lg leading-relaxed mb-8 italic">"The aesthetic control is unparalleled. It's the first time our surveys actually look like they belong on our website."</p>
+<div class="mt-auto flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="close up headshot of a confident businesswoman with glasses in a bright workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmk6asjQaUfJJOtn12nS10QcWhgdyE12RoyFJMWGDLNNiBfV7oDOBuEEi_vVv91kGmCYhs9N2Y--kpCdpY6SmecnVwf9psA9lV67WRUUrSlHh7QG68Hh1idb9HsDug4du3vn4EiHgEcNGGMFKvZk2w9SAE0p21Aeez845pv74_GpJkAusR1fcSOUV5YNq2kBT9LXFpLhwi6uUQPWBAuUy7kuzs7317VwN2dJh9Fm4iAqJ4cQiTctAUunCgQn8yHRaBQJSs6hAJvL2z"/>
+<div>
+<p class="font-bold text-on-surface">Elena Rodriguez</p>
+<p class="label-md text-on-surface-variant">Product Manager, Atmos</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-low p-8 rounded-lg flex flex-col h-full">
+<div class="flex gap-1 mb-6 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface text-lg leading-relaxed mb-8 italic">"The analytics dashboard is a masterpiece. I can share reports with stakeholders and they actually understand the data."</p>
+<div class="mt-auto flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a creative professional male in a stylish casual outfit standing against a textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTTPSebAF9ZQ4VVEwbXUHsqDrqeM1-2HQ_y91BAAyIv1Bud66iPId1vzoF22cj9wf4NrPJolRkFUyuJufasxOOODz5QERj15r49brfKr6omhIb-eKVRVsKaaaprq3-Lf6lEGOfRGtC4PLCG0Wu3L6sD6UPLCXPVsTjaGVl8hZoJiICgu8cQx1QPiD5ZiQgFhmJiAnmJ6pp1zPakmbdMUlnWvv7Q3LwcRwzKI7Gc1rffn6VLil7I6Z1odEYDNHtoW_wIbP5tnbuTnfI"/>
+<div>
+<p class="font-bold text-on-surface">Julian Banks</p>
+<p class="label-md text-on-surface-variant">Marketing Director, FlowState</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto bg-gradient-to-br from-primary to-primary-container rounded-lg p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10">
+<h2 class="display-lg text-white mb-6 text-4xl md:text-5xl lg:text-6xl">Ready to flow?</h2>
+<p class="text-primary-fixed text-lg mb-10 max-w-xl mx-auto">Join 10,000+ teams creating conversational experiences that convert.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-8 py-4 rounded-DEFAULT font-bold text-lg hover:scale-105 transition-transform">Get Started for Free</button>
+<button class="bg-primary-fixed/20 text-white backdrop-blur-sm border border-white/30 px-8 py-4 rounded-DEFAULT font-bold text-lg hover:bg-primary-fixed/30 transition-all">Schedule Demo</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="font-bold text-slate-900 dark:text-white text-xl">InsightFlow</span>
+<p class="text-slate-500 mt-2 label-md">© 2024 InsightFlow. Built for clarity.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-400 hover:text-slate-600 transition-opacity label-md" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-slate-600 transition-opacity label-md" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-slate-600 transition-opacity label-md" href="#">Security</a>
+<a class="text-slate-400 hover:text-slate-600 transition-opacity label-md" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

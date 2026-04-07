@@ -1,16 +1,18 @@
+import ApolloClient from "apollo-boost";
+import { getAuthToken } from "./lib/auth";
 
-import ApolloClient from 'apollo-boost';
-import Cookies from "js-cookie";
+var GRAPHQL_ENDPOINT = process.env.REACT_APP_GRAPHQL_ENDPOINT || "http://localhost:4000/";
 
-export default new ApolloClient({
-    uri: 'http://localhost:4000/',
-    request: async (operation) => {
-        const token = Cookies.get("token");
-        operation.setContext({
-            headers: {
-                authorization: `Bearer ${token}`
-            }
-        })
-    },
-    connectToDevTools: true
+var client = new ApolloClient({
+  uri: GRAPHQL_ENDPOINT,
+  request: function request(operation) {
+    var token = getAuthToken();
+
+    operation.setContext({
+      headers: token ? { authorization: "Bearer " + token } : {},
+    });
+  },
+  connectToDevTools: process.env.NODE_ENV !== "production",
 });
+
+export default client;

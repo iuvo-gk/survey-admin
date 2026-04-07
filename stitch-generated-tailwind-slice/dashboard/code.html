@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard | InsightFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006a61",
+                        "secondary-container": "#86f2e4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#ffd0d2",
+                        "inverse-primary": "#c3c0ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary-container": "#4f46e5",
+                        "secondary-fixed": "#89f5e7",
+                        "surface-container-high": "#eae6f4",
+                        "inverse-surface": "#302f39",
+                        "surface-variant": "#e4e1ee",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fcf8ff",
+                        "tertiary-fixed-dim": "#ffb2b7",
+                        "on-error": "#ffffff",
+                        "primary": "#3525cd",
+                        "surface-container-low": "#f5f2ff",
+                        "tertiary-fixed": "#ffdadb",
+                        "surface-tint": "#4d44e3",
+                        "surface-container-highest": "#e4e1ee",
+                        "tertiary": "#95002b",
+                        "on-background": "#1b1b24",
+                        "on-tertiary-fixed-variant": "#92002a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fcf8ff",
+                        "outline": "#777587",
+                        "on-surface": "#1b1b24",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-primary-container": "#dad7ff",
+                        "surface-container": "#f0ecf9",
+                        "inverse-on-surface": "#f3effc",
+                        "on-secondary-container": "#006f66",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-secondary-fixed": "#00201d",
+                        "on-tertiary-fixed": "#40000d",
+                        "on-surface-variant": "#464555",
+                        "surface-dim": "#dcd8e5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#bf0f3c",
+                        "background": "#fcf8ff",
+                        "primary-fixed": "#e2dfff",
+                        "outline-variant": "#c7c4d8",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#0f0069"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface-container-low text-on-surface">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col p-6 space-y-2 h-screen w-72 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 z-40 transition-all duration-300">
+<div class="flex items-center space-x-3 mb-10 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-slate-900 dark:text-white font-headline leading-tight">InsightFlow</h1>
+<p class="text-xs font-medium text-slate-500">Enterprise Tier</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center px-4 py-3 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 font-bold rounded-2xl scale-[1.02] transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-2xl hover:translate-x-1 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="poll">poll</span>
+<span class="font-label">Surveys</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-2xl hover:translate-x-1 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="insights">insights</span>
+<span class="font-label">Analytics</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-2xl hover:translate-x-1 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+<span class="font-label">Audience</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-2xl hover:translate-x-1 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="folder_open">folder_open</span>
+<span class="font-label">Library</span>
+</a>
+</nav>
+<div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-2xl hover:translate-x-1 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+<span class="font-label">Support</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-2xl hover:translate-x-1 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="font-label">Settings</span>
+</a>
+</div>
+<div class="mt-8 p-4 bg-primary-container rounded-2xl text-on-primary-container">
+<p class="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Current Usage</p>
+<div class="h-2 bg-white/20 rounded-full overflow-hidden mb-3">
+<div class="h-full bg-white w-3/4 rounded-full"></div>
+</div>
+<button class="w-full py-2 px-4 bg-white text-primary font-bold rounded-xl text-sm hover:scale-95 active:scale-90 transition-transform duration-200">
+                Upgrade Plan
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 min-h-screen transition-all duration-300">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-0 md:left-72 z-30 h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-xl shadow-slate-900/5 dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center px-8 h-full max-w-full">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Search surveys or data..." type="text"/>
+</div>
+<div class="md:hidden">
+<span class="text-2xl font-bold tracking-tight text-indigo-700 dark:text-indigo-300 font-headline">InsightFlow</span>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<nav class="hidden lg:flex items-center space-x-8 mr-4">
+<a class="text-slate-600 dark:text-slate-400 font-medium label-md hover:text-indigo-500 transition-colors" href="#">Platform</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium label-md hover:text-indigo-500 transition-colors" href="#">Templates</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium label-md hover:text-indigo-500 transition-colors" href="#">Pricing</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-slate-600 hover:text-indigo-500 transition-colors" title="notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:text-indigo-500 transition-colors" title="settings">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center space-x-3">
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-xl font-bold text-sm hover:scale-95 active:scale-90 transition-transform duration-200 shadow-lg shadow-primary/20">
+                                Create Survey
+                            </button>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="Professional headshot of a smiling creative professional with a clean blurred office background and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8DfHNJvtHs079PP56VUl-NHc3UtInCo7w2KI95M9MjifbLxE8ct5avEwuqqcu2NwhIAZM4TxvThVCkg9t3DRTs2Qf-e5qgBhH2hr_3l1mGxUMV--fTDcNTJEdl34fTFKf8gD6c49N7X1-sizgvbhkV40tbvfk2g2fKtbMqK8KMKX5XusrUqECIqyXbLzl00WdS6ufcOwW_jJIjuqUyhFyfe_4SSUSOVEQgOc1V2jHxXGTWooepZOquzPrsOeYx0YKFpaQi1mM-WOX"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="pt-28 pb-12 px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-2">Welcome back, Alex.</h1>
+<p class="text-on-surface-variant text-lg">Your data-driven insights are ready for review. Here's what's happening today.</p>
+</section>
+<!-- Stats Grid: Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Total Students Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border-none flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<span class="text-secondary font-bold text-xs bg-secondary/10 px-2 py-1 rounded-full">+12%</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total Students</p>
+<h3 class="font-headline text-3xl font-black">1,284</h3>
+</div>
+</div>
+<!-- Total Answers Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border-none flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary/10 rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+</div>
+<span class="text-secondary font-bold text-xs bg-secondary/10 px-2 py-1 rounded-full">+4.2k</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total Answers</p>
+<h3 class="font-headline text-3xl font-black">42.8k</h3>
+</div>
+</div>
+<!-- Total Surveys Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border-none flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-fixed-dim/20 rounded-xl text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="poll">poll</span>
+</div>
+<span class="text-on-surface-variant font-bold text-xs bg-slate-100 px-2 py-1 rounded-full">Static</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total Surveys</p>
+<h3 class="font-headline text-3xl font-black">84</h3>
+</div>
+</div>
+<!-- Total Questions Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border-none flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-amber-100 rounded-xl text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+</div>
+<span class="text-error font-bold text-xs bg-error-container px-2 py-1 rounded-full">-2%</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total Questions</p>
+<h3 class="font-headline text-3xl font-black">1.1k</h3>
+</div>
+</div>
+</div>
+<!-- Content Grid: Asymmetric Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Recent Surveys Table Container -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-2xl font-bold">Recent Surveys</h2>
+<button class="text-primary font-bold text-sm hover:underline">View All</button>
+</div>
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/30">
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Survey Name</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Creation Date</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-6 py-5">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-indigo-50 text-primary flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+</div>
+<span class="font-semibold text-on-surface">Product Feedback Q4</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 24, 2024</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">Active</span>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-6 py-5">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-indigo-50 text-primary flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+</div>
+<span class="font-semibold text-on-surface">Student Engagement Survey</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 20, 2024</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold">Draft</span>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<td class="px-6 py-5">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-indigo-50 text-primary flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+</div>
+<span class="font-semibold text-on-surface">Brand Awareness 2024</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 15, 2024</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-full text-xs font-bold">Closed</span>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Sidebar / Quick Actions -->
+<div class="space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border-none relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline text-xl font-bold mb-3">Launch something new</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Ready to gather more insights? Start a new survey with our optimized templates.</p>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center hover:scale-95 active:scale-90 transition-transform duration-200 shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined mr-2" data-icon="add_circle">add_circle</span>
+                                Create New Survey
+                            </button>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+</div>
+<div class="bg-slate-900 text-white p-8 rounded-lg shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center mb-4">
+<span class="material-symbols-outlined text-secondary-container mr-2" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-widest text-slate-400">AI Assistant</span>
+</div>
+<h4 class="font-headline text-lg font-bold mb-2">Automated Insights</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">We noticed a 15% drop in completion for 'Brand Awareness'. Should we optimize the question flow?</p>
+<button class="text-secondary-container font-bold text-sm flex items-center hover:translate-x-2 transition-transform">
+                                Review Suggestions
+                                <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Glassmorphism accent -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-white/5 backdrop-blur-3xl rounded-bl-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 px-8 mt-20 transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-6 md:space-y-0">
+<div class="flex items-center space-x-2">
+<span class="font-bold text-slate-900 dark:text-white font-headline">InsightFlow</span>
+<span class="text-slate-400 px-2">|</span>
+<p class="font-label text-slate-500 text-sm">© 2024 InsightFlow. Built for clarity.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-400 hover:text-slate-600 transition-opacity text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-slate-600 transition-opacity text-sm" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-slate-600 transition-opacity text-sm" href="#">Security</a>
+<a class="text-slate-400 hover:text-slate-600 transition-opacity text-sm" href="#">Contact</a>
+</div>
+<button class="p-3 bg-white dark:bg-slate-900 rounded-full shadow-sm hover:shadow-md transition-all group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+</button>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Only on Mobile Dashboard) -->
+<button class="md:hidden fixed bottom-8 right-8 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform duration-200 z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>
